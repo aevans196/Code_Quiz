@@ -1,33 +1,119 @@
+<!-- initializes -->
 <!DOCTYPE html>
 <html lang="en">
+<!-- title & links to styles -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alysa's Code Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Code Quiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
+
+<!-- header -->
+
 <body>
-    <div id="container">
-        <button id="start">Start Quiz</button>
-        <div id="quiz" style="display: none">
-            <div id="question"></div>
-            <div id="choices">
-                <div class="choice" id="A"></div>
-                <div class="choice" id="B"></div>
-                <div class="choice" id="C"></div>
-                <div class="choice" id="D"></div>
-            </div>
-            <button id="next" style="display: none">Next</button>
-            <div id="timer">
-                <div id="counter"></div>
-                <div id="timer"></div>
-            </div>
-            <div id="progress"></div>
-        </div>
-        <div id="scoreContainer" style="display: none">
-            <p id="finalScore">YOUR FINAL SCORE IS: </p>
-        </div>
+    <div class="title">
+        <h1>
+            Code Quiz
+        </h1>
     </div>
-    <script src="script.js"></script>
+    <!-- the desc has a hidden class applied to it, so it isn't shown until js makes it shown -->
+    <div id="description" class="description show">
+        <h3>
+            This is a quiz on coding. Each question will have four multiple choice answers. You will have 8 seconds to
+            complete the quiz. Push the button to start!
+        </h3>
+        <button type="button" class="button score-btn" href="#">Highscores</button>
+    </div>
+    <!-- First question, starts hidden. Each question has a class that lets the js know if its true or false -->
+    <section class="qSection show">
+        <div id="question-one" class="question hide">
+            <h3>
+                JSON stand for:
+            </h3>
+            <ol class="question-elements">
+                <li><button type="button" class="false button" href="#">Java Series Object Notation</a></li>
+                <li><button type="button" class="one-true true button" href="#">Javascript Object Notation</a></li>
+                <li><button type="button" class="false button" href="#">J++ Series Object Notation</a></li>
+                <li><button type="button" class="false button" href="#">Javascript Series Object Number</a></li>
+            </ol>
+        </div>
+        <!-- second question, starts hidden -->
+        <div id="question-two" class="question hide">
+            <h3>
+                Which of these are the three languages of the web?
+            </h3>
+            <ol class="question-elements">
+                <li><button type="button" class="false button" href="#">HTML, CSS, Java</a></li>
+                <li><button type="button" class="false button" href="#">PERL, FORTRAN, HTML</a></li>
+                <li><button type="button" class="false button" href="#">HTML, CSS, and Ruby</a></li>
+                <li><button type="button" class="two-true true button" href="#">HTML, CSS, and Javascript</a></li>
+            </ol>
+        </div>
+        <!-- third question -->
+        <div id="question-three" class="question hide">
+            <h3>
+                What year was ECMAScript first implemented?
+            </h3>
+            <ol class="question-elements">
+                <li><button type="button" class="three-true true button" href="#">1997</a></li>
+                <li><button type="button" class="false button" href="#">2011</a></li>
+                <li><button type="button" class="false button" href="#">1991</a></li>
+                <li><button type="button" class="false button" href="#">1776</a></li>
+            </ol>
+        </div>
+        <!-- fourth question -->
+        <div id="question-four" class="question hide">
+            <h3>
+                What kind of variable is available everywhere in your Javascript file?
+            </h3>
+            <ol class="question-elements">
+                <li><button type="button" class="false button" href="#">String</a></li>
+                <li><button type="button" class="four-true true button" href="#">Global</a></li>
+                <li><button type="button" class="false button" href="#">Local</a></li>
+                <li><button type="button" class="false button" href="#">Ghost</a></li>
+            </ol>
+        </div>
+    </section>
+    <!-- the start quiz button, has functions attached that start timer and quiz -->
+    <div class="start">
+        <button class="start button">Start</button>
+    </div>
+    <!-- The form where the user inputs their initials -->
+    <section class="scoreSection hide">
+        <form method="POST" class="intials">
+            <div class="initials">
+                <label for="intials">Please enter your initials</label>
+                <br>
+                <input type="text" name="initials" id="initials" />
+            </div>
+            <button class="confirm-initials button" type="button">Confirm</button>
+        </form>
+    </section>
+    <!-- The gameover message -->
+    <div id="gameover" class="gameover hide">
+        <h2>
+            Time's Up!
+        </h2>
+    </div>
+    <!-- timer display -->
+    <h2 class="time show">8 second(s) remaining</h2>
+
+    <!-- The highscores are listed here and start hidden -->
+    <section class="highscores hide">
+        <h1>
+            Highscores
+        </h1>
+
+    </section>
+    <ul id="myList"></ul>
+
+    <!-- Button that reloads the page allowing the user to retry at any point -->
+    <button class="button retry" type="button" href="#">Retry</button>
+
+    <!-- link to js -->
+    <script src="assets/script.js"></script>
 </body>
+
 </html>

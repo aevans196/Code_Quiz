@@ -1,86 +1,56 @@
 body {
-    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#container {
-    margin: 20px auto;
-    background-color: rgb(216, 170, 202);
-    height: 300px;
-    width: 700px;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px 0px;
+/* Added to classes to remove them from the page dynamically */
+.hide {
+    display:none;
 }
 
-#start {
-    font-size: 1.5em;
-    font-weight: bolder;
-    width: 100px;
-    height: 150px;
-    border: 2px solid rgb(15, 14, 14);
-    text-align: center;
-    cursor: pointer;
-    color: lightgrey;
+/* applied to classes to add them to the page dynamically */
+.show {
+    display: block;
 }
 
-#start:hover {
-    border: 3px solid rgb(158, 129, 145);
-    color: rgb(85, 39, 79);
+/* Styles title */
+.title h1 {
+   color: rgb(219, 66, 135);
+   background-color: rgb(196, 193, 193);
+   padding: 20px;
+   align-content: center;
 }
 
-#question {
-    width: 500px;
-    height: 125px;
+/* styles descritpion */
+div.description p {
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-#question p {
-    margin: 0;
-    padding: 15px;
-    font-size: 1.25em;
+/* Styles button */
+.button {
+    background-color: rgb(219, 66, 135); 
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    margin: 5px;
+    font-size: 16px;
+    transition-duration: 0.25s;
 }
 
-#choices {
-    width: 480px;
-    padding: 10px;
+/* Adds hover */
+.button:hover {
+    background-color: #a275ad;
 }
 
-.choice {
-    display: inline-block;
-    width: 135px;
-    text-align: center;
-    border: 1px solid grey;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px;
+/* styles the background color of the highscores */
+ul li {
+    background-color: #a275ad;
+    max-width: fit-content;
 }
 
-.choice:hover {
-    border: 2px solid grey;
-    font-weight: bold;
-}
-
-#timer {
-    height: 100px;
-    width: 200px;
-    bottom: 0px;
-    text-align: center;
-}
-
-#counter {
-    font-size: 3em;
-}
-
-#progress {
-    width: 500px;
-    padding: 5px;
-    text-align: right;
-}
-
-#scoreContainer {
-    margin: 20px auto;
-    background-color: white;
-    opacity: 0.8;
-    height: 300px;
-    width: 700px;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px 0px;
+/* tiger-stripes the odds */
+ul li:nth-child(odd) {
+    background-color: #e2a5f1;
 }
